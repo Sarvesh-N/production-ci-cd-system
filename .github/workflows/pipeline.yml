@@ -2,9 +2,11 @@ name: Basic CI Pipeline
 
 on:
   push:
+    paths: 01-pipeline-foundation/**
     branches:
       - main
       - dev
+        
 
 jobs:
   check:
