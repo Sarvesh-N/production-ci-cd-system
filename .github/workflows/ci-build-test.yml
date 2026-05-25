@@ -14,7 +14,8 @@ jobs:
     defaults:
       run:
         working-directory: 02-ci-build-and-test
-
+      
+    # build and test
     steps:
       - name: checkouting the repo
         uses: actions/checkout@v4
@@ -22,11 +23,15 @@ jobs:
       - name: install requirements
         run: pip install -r requirements.txt
 
-      - name: run app
-        run: python app.py &
+      - name: build docker image
+        run: docker build -t build-test-img .
 
-      - name: check app is alive
-        run: curl http://localhost:5000
+      - name: run docker image as container
+        run: docker run -d -p 5000:5000 build-test-img --name build-test-container
+      
+      - name: check app is alive or not
+        run: curl -f http://localhost:5000
+        
 
         
          
