@@ -26,9 +26,19 @@ jobs:
       - name: run image on container
         run: docker run -d -p 5000:5000 --name build-test-container build-test-img
       
-      - name: app is live or down
-        run: curl -f http://localhost:5000
+      - name: run health check in loop
+        run: |
+          for i in {1..10};then
+            if curl -s curl http://localhost:5000; do
+              echo "app is live"
+              break
+            fi
+          echo "checking is app up or down"
+          sleep 2
+          echo "app is down need attention"
+        
+      - name: run checks
+        run: curl -f -s http://localhost:5000
 
       - name: destroy resources
-
         run: docker container stop build-test-container && docker container rm build-test-container
