@@ -28,11 +28,12 @@ jobs:
       
       - name: run health check in loop
         run: |
-          for i in {1..10};then
-            if curl -s curl http://localhost:5000; do
+          for i in {1..10};do
+            if curl -s http://localhost:5000; then
               echo "app is live"
               break
             fi
+          done
           echo "checking is app up or down"
           sleep 2
           echo "app is down need attention"
