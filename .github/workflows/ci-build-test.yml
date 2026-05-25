@@ -33,13 +33,14 @@ jobs:
               echo "app is live"
               break
             fi
+            echo "checking is app up or down"
+            sleep 2
           done
-          echo "checking is app up or down"
-          sleep 2
-          echo "app is down need attention"
+          echo app is done need atttention
         
       - name: run checks
         run: curl -f -s http://localhost:5000
 
       - name: destroy resources
+        if: always()
         run: docker container stop build-test-container && docker container rm build-test-container
