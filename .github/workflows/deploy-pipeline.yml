@@ -70,9 +70,3 @@ jobs:
         run: |
           sleep 5
           curl http://localhost:5000
-
-      - name: destroy resource
-        if: always()
-        run: |
-          docker stop prod-container || true
-          docker rm prod-container || true
