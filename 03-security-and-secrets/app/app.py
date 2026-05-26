@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print(None)
     return f"API KEY: {os.getenv('API_KEY')}"
 
 
