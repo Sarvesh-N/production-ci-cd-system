@@ -20,9 +20,15 @@ jobs:
       
       - name: building it as image
         run: docker build -t build-image .
+
+      - name: setting api key
+        run: echo API_KEY=secret-key >> $GITHUB_ENV
       
       - name: run the docker image in the container
         run: docker run -d -p 5000:5000 --name prod-container build-image
+      
+      - name: display the logs
+        run: docker logs prod-container
       
       - name: check app is alive or not
         run : |
