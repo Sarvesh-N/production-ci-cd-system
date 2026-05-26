@@ -86,6 +86,6 @@ jobs:
         run: docker logs prod-container
 
       - name: destroy container
-        run: docker stop prod-container && docker rm container prod-container
+        run: docker stop prod-container && docker rm prod-container
 
 
