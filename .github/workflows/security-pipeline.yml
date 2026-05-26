@@ -81,6 +81,9 @@ jobs:
       
       - name: run container with img
         run: docker run -d -p 5000:5000 --name prod-container test-img
+      
+      - name: wait to load app
+        run: sleep 5
 
       - name: test docker contianer
         run: curl -s http://localhost:5000
