@@ -33,6 +33,7 @@ jobs:
             else;
               echo "app is down need attention"
             fi
+          done
       
       - name: second check
         run: curl -f http://localhost:5000
