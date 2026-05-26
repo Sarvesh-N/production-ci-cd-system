@@ -30,7 +30,7 @@ jobs:
             if curl -s http://localhost:5000; then
               echo "app is live"
               break
-            else;
+            else
               echo "app is down need attention"
             fi
           done
