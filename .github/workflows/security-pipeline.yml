@@ -29,7 +29,7 @@ jobs:
           for i in {1..10}; do
             if curl -s http://localhost:5000; then
               echo "app is live"
-              break
+              exit 0
             else
               echo "app is down need attention"
               sleep 2
