@@ -67,7 +67,7 @@ jobs:
       - ubuntu-latest
     defaults:
       run: 
-        working-directory: '03-security-and-secrets/**'
+        working-directory: '03-security-and-secrets/'
     
     env:
       API_KEY : ${{ secrets.API_KEY }}
