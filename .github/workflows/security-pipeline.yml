@@ -86,7 +86,7 @@ jobs:
         run: sleep 5
 
       - name: test docker contianer
-        run: curl -s http://localhost:5000
+        run: curl http://localhost:5000
       
       - name: show docker logs
         run: docker logs prod-container
