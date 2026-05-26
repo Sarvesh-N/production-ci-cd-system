@@ -14,18 +14,17 @@ jobs:
     defaults:
       run: 
         working-directory: 03-security-and-secrets
+    env:
+      API_KEY: ${{ secrets.API_KEY }}   
     steps:
       - name: checkouting repo
         uses: actions/checkout@v4
       
       - name: building it as image
         run: docker build -t build-image .
-
-      - name: setting api key
-        run: echo API_KEY=secret-key >> $GITHUB_ENV
       
       - name: run the docker image in the container
-        run: docker run -d -p 5000:5000 --name prod-container build-image
+        run: docker run -d -p 5000:5000 -e API_KEY=$API_KEY --name prod-container build-image
       
       - name: display the logs
         run: docker logs prod-container
