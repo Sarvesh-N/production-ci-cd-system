@@ -83,7 +83,7 @@ jobs:
         run: docker run -d -p 5000:5000 --name prod-container test-img
       
       - name: show docker logs
-        run: docker logs prod-containerx
+        run: docker logs prod-container
 
       - name: destroy container
         run: docker stop prod-container && docker rm container prod-container
