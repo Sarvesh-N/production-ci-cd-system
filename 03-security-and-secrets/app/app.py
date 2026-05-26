@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print("done")
+    print("added log viewer")
     return "Application is running with Secrets Management..."
+
 
 
 if __name__ == "__main__":
