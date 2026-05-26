@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     print("added log viewer")
-    return "Application is running with Secrets Management..."
+    return "Application is running with Secrets Management"
 
 
 
