@@ -1,12 +1,11 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print("added log viewer")
-    return "Application is running with Secrets Management"
-
+    return f"API KEY: {os.getenv('API_KEY')}"
 
 
 if __name__ == "__main__":

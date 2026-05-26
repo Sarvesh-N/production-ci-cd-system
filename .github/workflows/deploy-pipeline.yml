@@ -30,6 +30,5 @@ jobs:
 
       - name: destroy resource
         if : always()
-        run: docker stop test-img && docker rm test-img
+        run: docker stop prod-container && docker rm prod-container
 
-        
