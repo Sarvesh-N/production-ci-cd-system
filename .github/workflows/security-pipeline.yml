@@ -41,4 +41,3 @@ jobs:
       - name: destroy resources
         if : always()
         run: docker stop prod-container && docker rm prod-container
-
