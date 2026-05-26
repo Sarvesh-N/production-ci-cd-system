@@ -32,9 +32,13 @@ jobs:
               break
             else
               echo "app is down need attention"
+              sleep 2
             fi
           done
-      
+
+          echo "failed to start"
+          exit 1
+          
       - name: second check
         run: curl -f http://localhost:5000
 
