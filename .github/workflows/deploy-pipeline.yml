@@ -69,4 +69,4 @@ jobs:
       - name: test app
         run: |
           sleep 6
-          curl -s http://localhost:5000
+          curl -f http://localhost:5000
