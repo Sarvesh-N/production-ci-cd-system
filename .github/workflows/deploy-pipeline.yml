@@ -68,5 +68,5 @@ jobs:
 
       - name: test app
         run: |
-          sleep 5
-          curl http://localhost:5000
+          sleep 6
+          curl -s http://localhost:5000
