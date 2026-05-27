@@ -63,8 +63,8 @@ jobs:
       - name: build image
         run: docker build -t test-img .
 
-      - name: run img in container
-        run: docker run -d -p 5000:5000 --name prod-container test-img
+      # - name: run img in container
+      #   run: docker run -d -p 5000:5000 --name prod-container test-img
 
       - name: test app
         run: |
